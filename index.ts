@@ -7,7 +7,7 @@ const app = express();
 
 const io = new Server(httpServer, {
     cors: {
-        origin: "https://chat-teste-kemel.vercel.app", 
+        origin: "*", 
         methods: ["GET", "POST"]
     },
 });
