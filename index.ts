@@ -1,11 +1,13 @@
+import express from "express"
 import { createServer } from "http";
 import { Server } from "socket.io";
 
 const httpServer = createServer();
+const app = express();
 
 const io = new Server(httpServer, {
     cors: {
-        origin: "https://chat-teste-kemel.vercel.app/", 
+        origin: "https://chat-teste-kemel.vercel.app", 
         methods: ["GET", "POST"]
     },
 });
