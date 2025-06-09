@@ -1,6 +1,7 @@
 import express from "express"
 import { createServer } from "http";
 import { Server } from "socket.io";
+import setupChatSocket from "./chat/chat.gateway";
 
 const httpServer = createServer();
 const app = express();
@@ -12,20 +13,14 @@ const io = new Server(httpServer, {
     },
 });
 
-io.on("connection", (socket) => {
-    console.log(`Usuário conectado ${socket.id}`);
-
-    socket.on("send_message", (message) => {
-        io.emit("receive_message", message);
-    })
-    
-    socket.on("disconnect", () => {
-        console.log(`Usuario desconectado ${socket.id}`);
-    })
-});
+setupChatSocket(io);
 
 const PORT = process.env.PORT || 4000;
 
 httpServer.listen(PORT, () => {
   console.log(`Servidor Socket.IO rodando na porta ${PORT}`);
 })
+
+            
+// import authRoutes from './auth/auth.routes';
+// app.use('/api/auth', authRoutes);
