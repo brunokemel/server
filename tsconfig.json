@@ -4,7 +4,8 @@
     "module": "commonjs",
     "strict": true,
     "esModuleInterop": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "rootDir": "./Server" // <= se todos os .ts estiverem dentro de /Server
   },
-  "include": ["Server/index.ts"]
+  "include": ["Server/**/*"]
 }
