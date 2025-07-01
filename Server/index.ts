@@ -4,7 +4,7 @@ import { Server } from "socket.io";
 import setupChatSocket from "./chat/chat.gateway";
 
 const httpServer = createServer();
-const app = express();
+// const app = express();
 
 const io = new Server(httpServer, {
     cors: {
@@ -24,3 +24,6 @@ httpServer.listen(PORT, () => {
             
 // import authRoutes from './auth/auth.routes';
 // app.use('/api/auth', authRoutes);
+
+
+// OnRender ou Railway, o PORT é definido automaticamente
