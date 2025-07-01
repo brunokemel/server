@@ -4,11 +4,11 @@ export default function setupChatSocket(io: Server) {
     io.on("connection", (socket: Socket) => {
         console.log(`Usuário conectado: ${socket.id}`);
 
-        socket.on("send_menssage", (message) => {
+        socket.on("send_message", (message) => {
             io.emit("receive_message", message);
         });
 
-        socket.on("disconect", () => {
+        socket.on("disconnect", () => {
             console.log(`usuário desconectado: ${socket.id}`);
         });
     });

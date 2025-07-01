@@ -5,7 +5,7 @@
     "strict": true,
     "esModuleInterop": true,
     "outDir": "./dist",
-    "rootDir": "./Server" // <= se todos os .ts estiverem dentro de /Server
+    "rootDir": "./Server"
   },
   "include": ["Server/**/*"]
 }
